@@ -3,11 +3,11 @@ import 'dotenv/config';
 
 export const AppDataSource = new DataSource({
     type: 'postgres',
-    host: '172.17.0.1',
+    host: 'ec2-15-206-149-39.ap-south-1.compute.amazonaws.com',
     port: 5010,
     username: 'postgres',
     password: 'AMS4567',
-    database: 'postgres',
+    database: 'test',
     entities: ['dist/**/*.entity.js'],
     logging: true,
     synchronize: true,
