@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  test_api_server:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      # target: production
+    container_name: test_api_server
+    volumes:
+      - ./uploaded_documents:/usr/src/app/uploaded_documents
+      # - .:/usr/src/app
+
+    # Run a command against the development stage of the image
+    # command: npm start
+    restart: always
+    ports:
+      - 5100:3000
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.59.0/24
+

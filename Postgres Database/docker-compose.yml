@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  test_pg_master:
+    image: postgres:14.1
+    container_name: test_pg_master
+    restart: always
+    environment:
+      - POSTGRES_DATABASE=test
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=AMS4567
+    ports:
+      - '5010:5432'
